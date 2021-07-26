@@ -3,12 +3,12 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint = Matter.Constraint;
-
-var bg
-function preload() {
+var gameState = "onSling";
+var bg = "sprites/bg1.png";
+var score = 0;
+function preload(){
   getTime();
 }
-
 function setup (){
   
     createCanvas(800, 400);
@@ -41,10 +41,9 @@ function setup (){
 
 
 function draw() {
-  if(bg)
-  background(bg);
 
-    
+  
+  background(76);  
   tower.display()
  tower1.display()
  tower2.display()
@@ -67,6 +66,7 @@ function mouseDragged(){
 
 function mouseReleased(){
   sling.fly();
+  gameState = "launched";
 }
 
 function keyPressed(){
@@ -81,12 +81,11 @@ async function getTime(){
   var dateTime=responseJson.datetime
   var hour=dateTime.slice(11,13)
   if(hour>=07&&hour<=17){
-    bg= background(7)
+   background("Yellow")
   }
   else{
-   bg= background(3)
+  background("green")
   }
 
-  console.log(dateTime)
 
 }
