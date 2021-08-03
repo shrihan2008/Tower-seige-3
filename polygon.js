@@ -21,7 +21,7 @@ class Polygon
         translate(this.body.position.x, this.body.position.y);
         imageMode(CENTER);
       
-        image(this.image,this.radius,10,0 );
+        image(this.image,0,20,this.x,this.y);
         pop();
     }
 }

@@ -7,11 +7,11 @@ var gameState = "onSling";
 var bg = "sprites/bg1.png";
 var score = 0;
 function preload(){
-  getTime();
+getTime();
 }
 function setup (){
   
-    createCanvas(800, 400);
+    createCanvas(1000, 600);
     engine = Engine.create();
     world = engine.world;
 
@@ -21,7 +21,8 @@ function setup (){
 
   
 
-    ground = new Ground(600, 400, 10000, 20);
+    ground = new Ground(1000, 600, 10000, 20);
+    ground2 = new Ground(800, 400, 250, 20);
     tower = new Tower(560, 350, 30, 100);
     tower1 = new Tower(600, 350, 30, 100);
     tower2 = new Tower(520, 350, 30, 100);
@@ -32,10 +33,19 @@ function setup (){
     tower7 = new Tower(550, 150, 30, 100);
     tower8 = new Tower(610, 150, 30, 100);
     tower9 = new Tower(580, 50, 30, 100);
-    polygon=new Polygon(50,50,20)
+    
+    tower10 = new Tower(730, 20, 30, 100);
+    tower11 = new Tower(790, 20, 30, 100);
+    tower12 = new Tower(850, 20, 30, 100);
+    tower13 = new Tower(910, 20, 30, 100);
+
+    tower14 = new Tower(780, 10, 30, 100);
+    tower15 = new Tower(840, 10, 30, 100);
+    
+    polygon=new Polygon(50,40,50)
     
     
-    sling = new Sling(polygon.body,{x:150,y:150});
+    sling = new Sling(polygon.body,{x:100,y:150});
 
   }
 
@@ -54,8 +64,17 @@ function draw() {
  tower7.display()
  tower8.display()
  tower9.display()
+ tower10.display()
+ tower11.display()
+ tower12.display()
+ tower13.display()
+
+ tower14.display()
+ tower15.display()
+ 
   ground.display()
   polygon.display()
+  ground2.display()
  sling.display()
   
 }
@@ -66,12 +85,12 @@ function mouseDragged(){
 
 function mouseReleased(){
   sling.fly();
-  gameState = "launched";
+  
 }
 
 function keyPressed(){
   if(keyCode===32){
-     slingshot.attach(polygon.body)
+     sling.attach(polygon.body)
   }
 }
 
