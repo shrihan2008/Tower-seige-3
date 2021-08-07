@@ -4,7 +4,7 @@ constructor(x,y,width,height){
    var options= {
   isStatic:false,    
   friction:0.5,
-   density:1.2
+   density:0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001
   
     }
     this.trajectory =[];
@@ -19,7 +19,7 @@ display(){
         
   var pos =this.body.position;
   rectMode(CENTER);
-  fill(random(150,5))
+  fill(random(100,102))
     rect(pos.x, pos.y, this.width, this.height);
     if(this.body.velocity.x > 10 && this.body.position.x > 200){
       var position = [this.body.position.x, this.body.position.y];
