@@ -1,4 +1,4 @@
-class Tower
+class Tower2
 {
 constructor(x,y,width,height){
    var options= {
@@ -19,7 +19,7 @@ display(){
    
   var pos =this.body.position;
   rectMode(CENTER);
-  fill("yellow")
+  fill("green")
     rect(pos.x, pos.y, this.width, this.height);
     if(this.body.velocity.x > 10 && this.body.position.x > 200){
       var position = [this.body.position.x, this.body.position.y];
